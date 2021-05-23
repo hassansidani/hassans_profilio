@@ -53,7 +53,7 @@ all_trips %>% <br>
   arrange(member_casual, weekday)  %>% <br>
   ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +<br>
   geom_col(position = "dodge")<br>
-  ![https://github.com/hassansidani/my_first_profilio/blob/main/images/number%20of%20ride.png)<Br>
+  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/number%20of%20ride.png)<Br>
 ## Let's create a visualization for average duration<br>
 all_trips %>% <br>
   mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
