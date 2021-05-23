@@ -36,5 +36,41 @@ year_data$date <- as.Date(year_data$started_at) #The default format is yyyy-mm-d
 year_data$month <- format(as.Date(year_data$date), "%m")<br>
 year_data$day_of_week <- format(as.Date(year_data$started_at), "%A")<br>
 year_data$ride_length <- difftime(year_data$ended_at,year_data$started_at)<br>
-### The dataframe includes a few hundred entries when bikes were taken out of docks <br>and checked for quality by Divvy or ride_length was negative
+### The dataframe includes a few hundred entries when bikes were taken out of docks <br>and checked for quality by Divvy or ride_length was negative<br>
 all_trips <- year_data[!(year_data$start_station_name == "HQ QR" | year_data$ride_length<0),] <br> 
+### Compare members and casual users<br>
+aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = mean)<br>
+aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = median)<br>
+aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = max)<br>
+aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = min)<br>
+colnames(all_trips)<br>
+## Let's visualize the number of rides by rider type<br>
+all_trips %>% <br>
+  mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
+  group_by(member_casual, weekday) %>%<br> 
+  summarise(number_of_rides = n()<br>
+  ,average_duration = mean(ride_length)) %>%<br> 
+  arrange(member_casual, weekday)  %>% <br>
+  ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +<br>
+  geom_col(position = "dodge")<br>
+  ![https://github.com/hassansidani/my_first_profilio/blob/main/images/number%20of%20ride.png)<Br>
+## Let's create a visualization for average duration<br>
+all_trips %>% <br>
+  mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
+  group_by(member_casual, weekday) %>% <br>
+  summarise(number_of_rides = n()<br>
+            ,average_duration = mean(ride_length)) %>% <br>
+  arrange(member_casual, weekday)  %>% <br>
+  ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +<br>
+  geom_col(position = "dodge")<br>
+  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/average_duration.png)<Br>
+## Let's create a visualization for montly numbre of ride duration<br>
+all_trips %>% <br>
+  mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
+  group_by(member_casual, month) %>% <br>
+  summarise(number_of_rides = n()<br>
+            ,average_duration = mean(ride_length)) %>% <br>
+  arrange(member_casual, month)  %>% <br>
+  ggplot(aes(x =month, y = number_of_rides, fill = member_casual)) +<br>
+  geom_col(position = "dodge")<br>  
+  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)<Br>
