@@ -1,4 +1,4 @@
-#case study:divvy-chicago-bike-data-from-mai2020-to-april2021
+# case study:divvy-chicago-bike-data-from-mai2020-to-april2021
 in this case study i will use the Divvy trip data to examine biking trends 
 in Chicago over the course of one year from mai2020 to april 2021
 then conduct simple analysis to help answer the key question:
@@ -20,9 +20,9 @@ m2021_01 <- read.csv("202101-divvy-tripdata.csv")
 m2021_02 <- read.csv("202102-divvy-tripdata.csv")
 m2021_03 <- read.csv("202103-divvy-tripdata.csv")
 m2021_04 <- read.csv("202104-divvy-tripdata.csv")
-## STEP 3: WRANGLE DATA AND COMBINE INTO A SINGLE FILE
-year_data <- bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)<br>
-##understanding data <br>
+## STEP 3:wrangle data and combine into a single file  
+year_data <-      bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)<br>
+## understanding data <br>
 colnames(year_data) <br>
 ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)<Br>
 ### head(year_data) <br>
@@ -44,15 +44,15 @@ aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = median)<br>
 aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = max)<br>
 aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = min)<br>
 colnames(all_trips)<br>
-## Let's visualize the number of rides by rider type<br>
-all_trips %>% <br>
-  mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
-  group_by(member_casual, weekday) %>%<br> 
-  summarise(number_of_rides = n()<br>
-  ,average_duration = mean(ride_length)) %>%<br> 
-  arrange(member_casual, weekday)  %>% <br>
-  ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +<br>
-  geom_col(position = "dodge")<br>
+## Let's visualize the number of rides by rider type  
+  all_trips %>% <br>
+  &nbsp mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
+  &nbsp group_by(member_casual, weekday) %>%<br> 
+  &nbsp summarise(number_of_rides = n()<br>
+  &nbsp ,average_duration = mean(ride_length)) %>%<br> 
+  &nbsp arrange(member_casual, weekday)  %>% <br>
+  &nbsp ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +<br>
+  &nbsp geom_col(position = "dodge")<br>
   ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/number%20of%20ride.png)<Br>
 ## Let's create a visualization for average duration<br>
 all_trips %>% <br>
