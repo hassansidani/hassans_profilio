@@ -25,5 +25,5 @@ year_data <- bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m20
 ##understanding data <br>
 colnames(year_data)
 ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)<Br>
-##head(year_data)
+##head(year_data)<br>
 ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.PNG.jpg)
