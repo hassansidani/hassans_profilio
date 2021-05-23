@@ -26,4 +26,16 @@ year_data <- bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m20
 colnames(year_data)
 ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)<Br>
 ##head(year_data)<br>
-![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.PNG)
+![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.PNG)<br>
+ #step 4 cleaning data
+#remove unnecessary column start_lat, start_lng, end_lat, end_lng
+year_data <- year_data %>%  
+  select(-c(start_lat, start_lng, end_lat, end_lng))
+#adding columns  "date","year","day_of_week" and "ride_length" for calculation 
+year_data$date <- as.Date(year_data$started_at) #The default format is yyyy-mm-dd
+year_data$month <- format(as.Date(year_data$date), "%m")
+year_data$day_of_week <- format(as.Date(year_data$started_at), "%A")
+year_data$ride_length <- difftime(year_data$ended_at,year_data$started_at)
+# The dataframe includes a few hundred entries when bikes were taken out of docks
+#and checked for quality by Divvy or ride_length was negative
+all_trips <- year_data[!(year_data$start_station_name == "HQ QR" | year_data$ride_length<0),] 
