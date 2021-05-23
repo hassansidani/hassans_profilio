@@ -24,3 +24,6 @@ m2021_04 <- read.csv("202104-divvy-tripdata.csv")
 year_data <- bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)
 #understanding data 
 colnames(year_data)
+![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)
+head(year_data)
+![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.PNG.jpg)
