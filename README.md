@@ -21,9 +21,9 @@ m2021_02 <- read.csv("202102-divvy-tripdata.csv")
 m2021_03 <- read.csv("202103-divvy-tripdata.csv")
 m2021_04 <- read.csv("202104-divvy-tripdata.csv")
 # STEP 3: WRANGLE DATA AND COMBINE INTO A SINGLE FILE
-year_data <- bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)
-#understanding data 
+year_data <- bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)<br>
+##understanding data <br>
 colnames(year_data)
-![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)
-head(year_data)
+![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)<Br>
+##head(year_data)
 ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.PNG.jpg)
