@@ -44,33 +44,9 @@ aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = median)<br>
 aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = max)<br>
 aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = min)<br>
 colnames(all_trips)<br>
-## Let's visualize the number of rides by rider type  
-  all_trips %>% 
-  mutate(weekday = wday(started_at, label = TRUE)) %>%   
-  summarise(number_of_rides = n()  
-  ,average_duration = mean(ride_length)) %>%   
-  group_by(member_casual, weekday) %>%   
-  arrange(member_casual, weekday)  %>%   
-  ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +  
-  geom_col(position = "dodge")  
+## grouping by day_of_week it appears that members are, in fact, more likely to take rides on weekdays and casual on weekends. 
   ![alt text](/images/number_of_ride.png)<Br>
-## Let's create a visualization for average duration<br>
-all_trips %>% <br>
-  mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
-  group_by(member_casual, weekday) %>% <br>
-  summarise(number_of_rides = n()<br>
-            ,average_duration = mean(ride_length)) %>% <br>
-  arrange(member_casual, weekday)  %>% <br>
-  ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +<br>
-  geom_col(position = "dodge")<br>
+## Grouping by user type shows that casual, on average, take longer rides than members..
   ![alt text](/images/average_duration.png)<Br>
-## Let's create a visualization for montly numbre of ride duration<br>
-all_trips %>% <br>
-  mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
-  group_by(member_casual, month) %>% <br>
-  summarise(number_of_rides = n()<br>
-            ,average_duration = mean(ride_length)) %>% <br>
-  arrange(member_casual, month)  %>% <br>
-  ggplot(aes(x =month, y = number_of_rides, fill = member_casual)) +<br>
-  geom_col(position = "dodge")<br>  
+## grouping by month showed an expected growth in rides during warmer months
   ![alt text](/images/montly.png)<Br>
