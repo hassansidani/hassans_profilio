@@ -26,7 +26,7 @@ year_data <-      bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_1
 ### colnames(year_data) <br>
 ![alt text](/images/colnames.png)<br>
 ### head(year_data)<br>
-![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.png)<br>
+![alt text](/images/head2.png)<br>
 # step 4 cleaning data
 ### remove unnecessary column start_lat, start_lng, end_lat, end_lng<br>
 year_data <- year_data %>%  <br>
@@ -53,7 +53,7 @@ colnames(all_trips)<br>
   &nbsp; a&nbsp; arrange(member_casual, weekday)  %>% <br>
   &nbsp; &nbsp; ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +<br>
   &nbsp; &nbsp; geom_col(position = "dodge")<br>
-  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/number%20of%20ride.png)<Br>
+  ![alt text](/images/number%20of%20ride.png)<Br>
 ## Let's create a visualization for average duration<br>
 all_trips %>% <br>
   mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
@@ -63,7 +63,7 @@ all_trips %>% <br>
   arrange(member_casual, weekday)  %>% <br>
   ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +<br>
   geom_col(position = "dodge")<br>
-  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/average_duration.png)<Br>
+  ![alt text](/images/average_duration.png)<Br>
 ## Let's create a visualization for montly numbre of ride duration<br>
 all_trips %>% <br>
   mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
@@ -73,4 +73,4 @@ all_trips %>% <br>
   arrange(member_casual, month)  %>% <br>
   ggplot(aes(x =month, y = number_of_rides, fill = member_casual)) +<br>
   geom_col(position = "dodge")<br>  
-  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/montly.png)<Br>
+  ![alt text](/images/montly.png)<Br>
