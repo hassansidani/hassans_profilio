@@ -73,4 +73,4 @@ all_trips %>% <br>
   arrange(member_casual, month)  %>% <br>
   ggplot(aes(x =month, y = number_of_rides, fill = member_casual)) +<br>
   geom_col(position = "dodge")<br>  
-  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/Colnames.PNG)<Br>
+  ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/montly.png)<Br>
