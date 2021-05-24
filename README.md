@@ -22,7 +22,7 @@ m2021_03 <- read.csv("202103-divvy-tripdata.csv")
 m2021_04 <- read.csv("202104-divvy-tripdata.csv")
 ## STEP 3:wrangle data and combine into a single file  
 year_data <-      bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)<br>
-## understanding data<br>
+## understanding data  
 ### colnames(year_data) <br>
 ![alt text](/images/colnames.png)<br>
 ### head(year_data)<br>
@@ -37,7 +37,10 @@ year_data$month <- format(as.Date(year_data$date), "%m")<br>
 year_data$day_of_week <- format(as.Date(year_data$started_at), "%A")<br>
 year_data$ride_length <- difftime(year_data$ended_at,year_data$started_at)<br>
 ### The dataframe includes a few hundred entries when bikes were taken out of docks <br>and checked for quality by Divvy or ride_length was negative<br>
-all_trips <- year_data[!(year_data$start_station_name == "HQ QR" | year_data$ride_length<0),] <br> 
+all_trips <- year_data[!(year_data$start_station_name == "HQ QR" | year_data$ride_length<0),] <br>
+# STEP 5: CONDUCT DESCRIPTIVE ANALYSIS  
+## Descriptive analysis on ride_length (all figures in seconds)
+ ![alt text](/images/statistic.PNG)<Br>
 ### Compare members and casual users<br>
 statistique shows that casual take two time longer ride then members
  ![alt text](/images/compare.png)<Br>
