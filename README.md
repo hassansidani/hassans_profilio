@@ -3,7 +3,7 @@ in this case study i will use the Divvy trip data to examine biking trends
 in Chicago over the course of one year from mai2020 to april 2021
 then conduct simple analysis to help answer the key question:
 “In what ways do members and casual riders use Divvy bikes differently?”  
-##step 1 Load packages
+##  step 1 Load packages
 install.packages("tidyverse")  
 library(tidyverse)  
 library(lubridate)  
@@ -41,11 +41,13 @@ all_trips <- year_data[!(year_data$start_station_name == "HQ QR" | year_data$rid
 ### Compare members and casual users<br>
 statistique shows that casual take two time longer ride then members
  ![alt text](/images/compare.png)<Br>
-## grouping by day_of_week it appears that members are, in fact, more likely to take rides on weekdays and casual on weekends. 
+## grouping by day_of_week it appears that members are more  to take rides on weekdays and casual on weekends. 
   ![alt text](/images/number_of_ride.png)<Br>
 ## Grouping by user type shows that casual, on average, take longer rides than members..
   ![alt text](/images/average_duration.png)<Br>
-## grouping by month showed an expected growth in rides during warmer months
+## grouping by month showed that members has more number of ride each month ,<br>and expected growth in rides during warmer months
   ![alt text](/images/montly.png)<Br>
- #conclussion 
+ ## conclusion 
+ members take more number of ride then casual compare to casual whom take the longuest ride,
+ members are, in fact are more likely to take rides on weekdays and casual on weekends. 
   
