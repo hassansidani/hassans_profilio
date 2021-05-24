@@ -39,11 +39,7 @@ year_data$ride_length <- difftime(year_data$ended_at,year_data$started_at)<br>
 ### The dataframe includes a few hundred entries when bikes were taken out of docks <br>and checked for quality by Divvy or ride_length was negative<br>
 all_trips <- year_data[!(year_data$start_station_name == "HQ QR" | year_data$ride_length<0),] <br> 
 ### Compare members and casual users<br>
-aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = mean)<br>
-aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = median)<br>
-aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = max)<br>
-aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = min)<br>
-colnames(all_trips)<br>
+ ![alt text](/images/compare.png)<Br>
 ## grouping by day_of_week it appears that members are, in fact, more likely to take rides on weekdays and casual on weekends. 
   ![alt text](/images/number_of_ride.png)<Br>
 ## Grouping by user type shows that casual, on average, take longer rides than members..
