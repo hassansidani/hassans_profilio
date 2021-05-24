@@ -49,7 +49,7 @@ statistique shows that casual take two time longer ride then members
 ## Grouping by user type shows that casual, on average, take longer rides than members..
   ![alt text](/images/average_duration.png)<Br>
 ## grouping by month showed that members has more number of ride each month,and expected growth in ride during warmer months
-  ![alt text](/images/montly.png)<Br>
+  ![alt text](/images/montly.png)  
   ## conclusion  
   __*members take more number of ride then casual compare to casual whom take the longuest ride,
  members are, in fact are more likely to take rides on weekdays and casual on weekends.*__ 
