@@ -45,15 +45,15 @@ aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = max)<br>
 aggregate(all_trips$ride_length ~ all_trips$member_casual, FUN = min)<br>
 colnames(all_trips)<br>
 ## Let's visualize the number of rides by rider type  
-  all_trips %>% <br>
-  &nbsp; &nbsp; mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
-  &nbsp; &nbsp;  group_by(member_casual, weekday) %>%<br> 
-  &nbsp; &nbsp; summarise(number_of_rides = n()<br>
-  &nbsp; &nbsp; ,average_duration = mean(ride_length)) %>%<br> 
-  &nbsp; a&nbsp; arrange(member_casual, weekday)  %>% <br>
-  &nbsp; &nbsp; ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +<br>
-  &nbsp; &nbsp; geom_col(position = "dodge")<br>
-  ![alt text](/images/number%20of%20ride.png)<Br>
+  all_trips %>% 
+  mutate(weekday = wday(started_at, label = TRUE)) %>%   
+  summarise(number_of_rides = n()  
+  ,average_duration = mean(ride_length)) %>%   
+  group_by(member_casual, weekday) %>%   
+  arrange(member_casual, weekday)  %>%   
+  ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +  
+  geom_col(position = "dodge")  
+  ![alt text](/images/number_of_ride.png)<Br>
 ## Let's create a visualization for average duration<br>
 all_trips %>% <br>
   mutate(weekday = wday(started_at, label = TRUE)) %>% <br>
