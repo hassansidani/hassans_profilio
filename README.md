@@ -22,10 +22,10 @@ m2021_03 <- read.csv("202103-divvy-tripdata.csv")
 m2021_04 <- read.csv("202104-divvy-tripdata.csv")
 ## STEP 3:wrangle data and combine into a single file  
 year_data <-      bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)<br>
-## understanding data <br>
-colnames(year_data) <br>
-![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/colnames.png)<br>
-### head(year_data) <br>
+## understanding data<br>
+### colnames(year_data) <br>
+![](https://github.com/hassansidani/my_first_profilio/blob/main/images/colnames.png)<br>
+### head(year_data)<br>
 ![alt text](https://github.com/hassansidani/my_first_profilio/blob/main/images/head2.png)<br>
 # step 4 cleaning data
 ### remove unnecessary column start_lat, start_lng, end_lat, end_lng<br>
