@@ -1,8 +1,8 @@
 # case study:divvy-chicago-bike-data-from-mai2020-to-april2021
-in this case study i will use the Divvy trip data to examine biking trends 
+__*in this case study i will use the Divvy trip data to examine biking trends 
 in Chicago over the course of one year from mai2020 to april 2021
 then conduct simple analysis to help answer the key question:
-“In what ways do members and casual riders use Divvy bikes differently?”  
+“In what ways do members and casual riders use Divvy bikes differently?”*__  
 ##  step 1 Load packages
 install.packages("tidyverse")  
 library(tidyverse)  
