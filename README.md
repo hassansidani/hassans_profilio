@@ -1,4 +1,4 @@
-# case study:divvy-chicago-bike-data-from-mai2020-to-april2021
+# case study:divvy chicago bike data from mai_2020 to april_2021
 __*in this case study i will use the Divvy trip data to examine biking trends 
 in Chicago over the course of one year from mai2020 to april 2021
 then conduct simple analysis to help answer the key question:
