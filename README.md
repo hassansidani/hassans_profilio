@@ -9,18 +9,18 @@ library(tidyverse)
 library(lubridate)  
 library(ggplot2)  
 ## Step 2: Import data
-m2020_05 <- read.csv("202005-divvy-tripdata.csv")
-m2020_06 <- read.csv("202006-divvy-tripdata.csv")
-m2020_07 <- read.csv("202007-divvy-tripdata.csv")
-m2020_08 <- read.csv("202008-divvy-tripdata.csv")
-m2020_09 <- read.csv("202009-divvy-tripdata.csv")
-m2020_10 <- read.csv("202010-divvy-tripdata.csv")
-m2020_12 <- read.csv("202012-divvy-tripdata.csv")
-m2021_01 <- read.csv("202101-divvy-tripdata.csv")
-m2021_02 <- read.csv("202102-divvy-tripdata.csv")
-m2021_03 <- read.csv("202103-divvy-tripdata.csv")
-m2021_04 <- read.csv("202104-divvy-tripdata.csv")
-## STEP 3:wrangle data and combine into a single file  
+m2020_05 <- read.csv("202005-divvy-tripdata.csv")<br>
+m2020_06 <- read.csv("202006-divvy-tripdata.csv")<br>
+m2020_07 <- read.csv("202007-divvy-tripdata.csv")<br>
+m2020_08 <- read.csv("202008-divvy-tripdata.csv")<br>
+m2020_09 <- read.csv("202009-divvy-tripdata.csv")<br>
+m2020_10 <- read.csv("202010-divvy-tripdata.csv")<br>
+m2020_12 <- read.csv("202012-divvy-tripdata.csv")<br>
+m2021_01 <- read.csv("202101-divvy-tripdata.csv")<br>
+m2021_02 <- read.csv("202102-divvy-tripdata.csv")<br>
+m2021_03 <- read.csv("202103-divvy-tripdata.csv")<br>
+m2021_04 <- read.csv("202104-divvy-tripdata.csv")<br>
+## STEP 3:wrangle data and combine into a single file<br> 
 year_data <-      bind_rows(m2020_06,m2020_06,m2020_07,m2020_08,m2020_09,m2020_10,m2020_11,m2020_12,m2021_01,m2021_02,m2021_03,m2021_04)<br>
 ## understanding data  
 ### colnames(year_data) <br>
@@ -51,6 +51,6 @@ statistique shows that casual take two time longer ride then members
 ## grouping by month showed that members has more number of ride each month,and expected growth in ride during warmer months
   ![alt text](/images/montly.png)  
 ## conclusion  
-  __*members take more number of ride then casual compare to casual whom take the longuest ride,
- members are, in fact are more likely to take rides on weekdays and casual on weekends.*__ 
+  __*The members are more than the casuals in terms of the number of trips and take place on weekdays, but the longest trips are taken by casuals, especially at the weekend
+ .*__ 
   
